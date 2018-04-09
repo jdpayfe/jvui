@@ -1,0 +1,45 @@
+@import './common/var.scss';
+
+$jv-swipe-indicator: 6px;
+
+.jv-swipe {
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+
+    &-item {
+        float: left;
+        height: 100%;
+    }
+
+    &__track {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__indicators {
+        left: 50%;
+        bottom: 10px;
+        position: absolute;
+        height: $jv-swipe-indicator;
+        transform: translate3d(-50%, 0, 0);
+
+        > i {
+            border-radius: 100%;
+            vertical-align: top;
+            display: inline-block;
+            background-color: $gray-dark;
+            width: $jv-swipe-indicator;
+            height: $jv-swipe-indicator;
+            &:not(:last-child) {
+                margin-right: $jv-swipe-indicator;
+            }
+        }
+
+        .jv-swipe__indicator {
+            &--active {
+                background-color: $orange;
+            }
+        }
+    }
+}

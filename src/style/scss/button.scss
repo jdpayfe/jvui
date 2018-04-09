@@ -1,0 +1,52 @@
+@import './common/var.scss';
+
+.jv-button {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    height: .45rem;
+    line-height: .43rem;
+    border-radius: .04rem;
+    text-align: center;
+    -webkit-appearance: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 0 .15rem;
+    font-size: .14rem;
+
+    &::before {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        border: inherit;
+        border-color: $black;
+        background-color: $black;
+        border-radius: inherit; /* inherit parent's border radius */
+        transform: translate(-50%, -50%);
+    }
+
+    &:not([disabled]):active::before {
+        opacity: .1;
+    }
+
+    /*&--loading {*/
+    /*.jv-loading {*/
+    /*margin: 0 auto;*/
+    /*}*/
+    /**/
+    /*.jv-button__text {*/
+    /*display: none;*/
+    /*}*/
+    /*}*/
+
+    &--block {
+        //width: 100%;
+        display: block;
+    }
+
+}

@@ -1,0 +1,13 @@
+@import './common/var.scss';
+
+.jv-badge {
+    box-sizing: border-box;
+    display: inline-block;
+    height: .2rem;
+    line-height: .2rem;
+    padding: 0 .05rem;
+    text-align: center;
+    color: #fff;
+    font-size: .14rem;
+    background-color: $red;
+}

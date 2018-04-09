@@ -1,0 +1,63 @@
+.jv-area {
+    position: relative;
+    height: 3.55rem;
+    overflow: hidden;
+
+    .jv-tabs--line {
+        padding-top: .33rem;
+    }
+
+    .jv-tabs--line .jv-tabs__wrap {
+        height: .33rem;
+    }
+
+    &__item {
+        padding: .1rem;
+        font-size: .14rem;
+        color: #333;
+    }
+
+    .jv-tab {
+        flex: none !important;
+        padding: 0 .1rem;
+    }
+
+    &__title {
+        height: .4rem;
+        padding-top: .19rem;
+        text-align: center;
+        font-size: .16rem;
+        color: #666;
+    }
+
+    &__cancel {
+        position: absolute;
+        top: .16rem;
+        right: .15rem;
+        width: .225rem;
+        height: .225rem;
+        background: url("../image/closepopup.png") no-repeat center;
+        background-size: .18rem;
+    }
+
+    &__confirm {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+        width: 100%;
+        height: .55rem;
+        line-height: .55rem;
+        text-align: center;
+        background-image: linear-gradient(-225deg, #FF4A00 0%, #F6002F 100%);
+        color: #fff;
+    }
+
+    .jv-swipe {
+        height: 2.24rem;
+    }
+
+    .jv-swipe-item {
+        overflow: auto;
+    }
+}
