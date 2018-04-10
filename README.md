@@ -1,27 +1,57 @@
-# jdPay ui
+.DS_Store
+node_modules/
+npm-debug.log
+yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-> vue ui
 
-## Build Setup
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
 
-``` bash
-# install dependencies
-npm install
+# Sensitive or high-churn files:
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
 
-# serve with hot reload at localhost:8080
-npm run dev
+# Gradle:
+.idea/**/gradle.xml
+.idea/**/libraries
 
-# build for production with minification
-npm run build
+# Mongo Explorer plugin:
+.idea/**/mongoSettings.xml
 
-# build for production and view the bundle analyzer report
-npm run build --report
+## File-based project format:
+*.iws
 
-# run unit tests
-npm run unit
+## Plugin-specific files:
 
-# run all tests
-npm test
-```
+# IntelliJ
+/out/
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+.idea/approval.iml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+/.idea/h5.iml
+/.idea/vcs.xml
+.idea/
+/.gitignore
