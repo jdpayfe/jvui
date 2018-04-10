@@ -32,9 +32,3 @@
         }
     };
 </script>
-
-
-<style lang='scss' rel="stylesheet/scss" type="text/css">
-
-
-</style>

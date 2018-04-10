@@ -46,7 +46,9 @@
                         members: [
                             {name: '单元格 - Cell', router: '/layout/cell'},
                             {name: '导航条 - NavBar', router: '/layout/navBar'},
-                            {name: '选项卡 - Tabs', router: '/layout/tabs'}
+                            {name: '选项卡 - Tabs', router: '/layout/tabs'},
+                            {name: '弹出层 - Popup', router: '/layout/popup'}
+
 
                         ]
                     },
@@ -66,10 +68,10 @@
 
         methods: {
             onClickLeft () {
-                this.$router.replace('/')
+                this.$router.push('/')
             },
             routerLink (member) {
-                this.$router.replace({
+                this.$router.push({
                     path: member.router,
                     query: {
                         title: member.name

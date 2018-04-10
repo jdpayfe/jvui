@@ -25,21 +25,21 @@ export default {
             default: true
         }
     },
-    
+
     watch: {
         value(val) {
             this[val ? 'open' : 'close']();
         },
-        
+
         getContainer() {
             this.move();
         },
-        
+
         overlay() {
             this.renderOverlay();
         }
     },
-    
+
     created() {
         this._popupId = 'popup-' + context.plusKey('id');
         this.pos = {
@@ -47,7 +47,7 @@ export default {
             y: 0
         };
     },
-    
+
     mounted() {
         if (this.getContainer) {
             this.move();
@@ -56,44 +56,44 @@ export default {
             this.open();
         }
     },
-    
+
     beforeDestroy() {
         this.close();
     },
-    
+
     methods: {
         open() {
             /* istanbul ignore next */
             if (this.$isServer) {
                 return;
             }
-            
+
             // 如果属性中传入了`zIndex`，则覆盖`context`中对应的`zIndex`
             if (this.zIndex !== undefined) {
                 context.zIndex = this.zIndex;
             }
-            
+
             if (this.lockScroll) {
-                document.body.classList.add('van-overflow-hidden');
+                document.body.classList.add('jv-overflow-hidden');
                 on(document, 'touchstart', this.onTouchStart);
                 on(document, 'touchmove', this.onTouchMove);
             }
-            
+
             this.renderOverlay();
             this.$emit('input', true);
         },
-        
+
         close() {
             if (this.lockScroll) {
-                document.body.classList.remove('van-overflow-hidden');
+                document.body.classList.remove('jv-overflow-hidden');
                 off(document, 'touchstart', this.onTouchStart);
                 off(document, 'touchmove', this.onTouchMove);
             }
-            
+
             manager.close(this._popupId);
             this.$emit('input', false);
         },
-        
+
         move() {
             if (this.getContainer) {
                 this.getContainer().appendChild(this.$el);
@@ -101,14 +101,14 @@ export default {
                 this.$parent.$el.appendChild(this.$el);
             }
         },
-        
+
         onTouchStart(e) {
             this.pos = {
                 x: e.touches[0].clientX,
                 y: e.touches[0].clientY
             };
         },
-        
+
         onTouchMove(e) {
             const {pos} = this;
             const dx = e.touches[0].clientX - pos.x;
@@ -117,16 +117,16 @@ export default {
             const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
             const {scrollHeight, offsetHeight, scrollTop} = el;
             const isVertical = Math.abs(dx) < Math.abs(dy);
-            
+
             let status = '11';
-            
+
             /* istanbul ignore next */
             if (scrollTop === 0) {
                 status = offsetHeight >= scrollHeight ? '00' : '01';
             } else if (scrollTop + offsetHeight >= scrollHeight) {
                 status = '10';
             }
-            
+
             /* istanbul ignore next */
             if (
                 status !== '11' &&
@@ -136,7 +136,7 @@ export default {
                 e.stopPropagation();
             }
         },
-        
+
         renderOverlay() {
             if (this.overlay) {
                 manager.open(this, {

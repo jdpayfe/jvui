@@ -20,6 +20,7 @@ import Icon from './pages/icon'
 import Cell from './pages/cell'
 import NavBar from './pages/nav-bar'
 import Tabs from './pages/tabs'
+import Popup from './pages/popup'
 
 // Advanced
 import Area from './pages/area'
@@ -38,6 +39,7 @@ const routes = [
     { path: '/layout/cell', component: Cell },
     { path: '/layout/navBar', component: NavBar },
     { path: '/layout/tabs', component: Tabs },
+    { path: '/layout/popup', component: Popup },
 
     { path: '/advanced/area', component: Area },
     { path: '/advanced/picker', component: Picker },

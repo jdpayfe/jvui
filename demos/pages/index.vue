@@ -38,7 +38,7 @@
 
         methods: {
             demo() {
-                this.$router.replace({path: '/home'})
+                this.$router.push({path: '/home'})
             },
 
             code() {
