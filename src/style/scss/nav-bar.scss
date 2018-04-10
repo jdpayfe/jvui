@@ -1,11 +1,10 @@
-@import './common/var.scss';
 
 .jv-nav-bar {
-    height: 46px;
+    height: .44rem;
     position: relative;
     user-select: none;
     text-align: center;
-    line-height: 46px;
+    line-height: .44rem;
     background-color: $white;
 
     .jv-icon {
@@ -17,8 +16,8 @@
         transform: rotate(180deg);
 
         + .jv-nav-bar__text {
-            margin-left: -20px;
-            padding-left: 25px;
+            margin-left: -.2rem;
+            padding-left: .25rem;
         }
     }
 
@@ -30,28 +29,28 @@
     }
 
     &__title {
-        font-size: 16px;
+        font-size: .16rem;
     }
 
     &__left,
     &__right {
         bottom: 0;
-        font-size: 14px;
+        font-size: .14rem;
         position: absolute;
     }
 
     &__left {
-        left: 15px;
+        left: .15rem;
     }
 
     &__right {
-        right: 15px;
+        right: .15rem;
     }
 
     &__text {
         color: $blue;
-        margin: 0 -15px;
-        padding: 0 15px;
+        margin: 0 -.15rem;
+        padding: 0 .15rem;
         display: inline-block;
         vertical-align: middle;
 

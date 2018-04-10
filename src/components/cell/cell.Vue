@@ -2,7 +2,6 @@
     <div class="jv-cell"
         :class="{
               'jv-hairline': border,
-              'jv-cell--required': required,
               'jv-cell--clickable': isLink || clickable
             }"
         @click="onClick">
@@ -37,6 +36,13 @@
 <script>
     import JvIcon from '../icon/icon'
 
+    /*slot
+    * icon	自定义icon
+    *title	自定义title
+    *right-icon	自定义右侧按钮，默认是arrow
+    *
+    * */
+
     export default {
         name: 'jv-cell',
         components: {
@@ -44,29 +50,28 @@
         },
         data () {
         	return {
-                rightBgUrl: require('src/image/toSelect.png')
+                rightBgUrl: require('src/image/arrow-r-gray.png')
             };
         },
         props: {
-            icon: String,
-            title: String,
-            label: String,
-            isLink: Boolean,
-            required: Boolean,
-            clickable: Boolean,
-            value: [String, Number],
-            border: {
+            icon: String, // 左侧图标
+            title: String, // 左侧标题
+            label: String, 	// 标题下方的描述信息
+            isLink: Boolean, // 是否展示右侧箭头并开启点击反馈
+            clickable: Boolean, // 是否开启点击反馈
+            value: [String, Number], // 右侧内容
+            border: { // 是否显示内边框
                 type: Boolean,
                 default: true
             },
-            valInColumn: {
+            valInColumn: { // 传入value为slot时，排成行 还是 列， 默认行
                 type: Boolean,
                 default: false
-            } // 传入value为slot时，排成行 还是 列
+            }
         },
 
         methods: {
-            onClick() {
+            onClick() { 	// 点击 cell 时触发
                 this.$emit('click');
             }
         }

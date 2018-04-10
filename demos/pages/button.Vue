@@ -55,7 +55,7 @@
 </script>
 
 <style lang='scss' rel="stylesheet/scss" type="text/scss">
-    @import '../../src/style/scss/common/var.scss';
+    @import '../../src/style/common/var.scss';
 
     .button-demo {
 

@@ -2,7 +2,7 @@
  * Created by yangjiali on 2018/3/30.
  */
 // css
-import '../style/common/css/rem.js';
+import '../style/common/rem/rem.js';
 import '../style/index.scss';
 
 // vue

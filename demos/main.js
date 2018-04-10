@@ -14,23 +14,33 @@ import Home from './pages/home'
 // Basic
 import Badge from './pages/badge'
 import Button from './pages/button'
+import Icon from './pages/icon'
 
 // Layout
+import Cell from './pages/cell'
 import NavBar from './pages/nav-bar'
 import Tabs from './pages/tabs'
 
 // Advanced
 import Area from './pages/area'
+import Picker from './pages/picker'
 import Swipe from './pages/swipe'
 
 const routes = [
     { path: '/', component: Index },
     { path: '/home', component: Home },
+
     { path: '/basic/badge', component: Badge },
     { path: '/basic/button', component: Button },
+    { path: '/basic/icon', component: Icon },
+
+
+    { path: '/layout/cell', component: Cell },
     { path: '/layout/navBar', component: NavBar },
     { path: '/layout/tabs', component: Tabs },
+
     { path: '/advanced/area', component: Area },
+    { path: '/advanced/picker', component: Picker },
     { path: '/advanced/swipe', component: Swipe },
 ];
 

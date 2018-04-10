@@ -38,11 +38,13 @@
                         members: [
                             {name: '徽章 - Badge', router: '/basic/badge'},
                             {name: '按钮 - Button', router: '/basic/button'},
+                            {name: '图标 - Icon', router: '/basic/icon'},
                         ]
                     },
                     layout: {
                         blockTitle: '布局',
                         members: [
+                            {name: '单元格 - Cell', router: '/layout/cell'},
                             {name: '导航条 - NavBar', router: '/layout/navBar'},
                             {name: '选项卡 - Tabs', router: '/layout/tabs'}
 
@@ -52,6 +54,7 @@
                         blockTitle: '高级',
                         members: [
                             {name: '省市区 - Area', router: '/advanced/area'},
+                            {name: '选择器 - Picker', router: '/advanced/picker'},
                             {name: '轮播 - Swipe', router: '/advanced/swipe'}
 
                         ]
