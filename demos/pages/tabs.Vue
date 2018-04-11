@@ -1,7 +1,7 @@
 <template>
     <div class="tabs-demo">
         <jv-nav-bar :title="title" left-arrow
-                    @click-left="$router.replace('/home')" />
+            @click-left="$router.replace('/home')"/>
 
         <div class="block-title">基础用法</div>
         <div class="block">
@@ -83,63 +83,63 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                title: this.$route.query.title,
-                active: 2,
-                tabs: [1, 2, 3, 4],
-                content: '内容',
-                tab: '选项'
-            };
+export default{
+    data () {
+        return {
+            title: this.$route.query.title,
+            active: 2,
+            tabs: [1, 2, 3, 4],
+            content: '内容',
+            tab: '选项'
+        };
+    },
+
+    methods: {
+        onClickDisabled (index, title) {
+        //  this.$toast(title + this.$t('disabled'));
         },
 
-        methods: {
-            onClickDisabled(index, title) {
-//                this.$toast(title + this.$t('disabled'));
-            },
-
-            onClick(index, title) {
-//                this.$toast(title);
-            }
+        onClick (index, title) {
+        //  this.$toast(title);
         }
-    };
+    }
+};
 </script>
 
 <style lang='scss' rel="stylesheet/scss" type="text/scss">
-    .tabs-demo {
-        margin-bottom: 300px;
+.tabs-demo {
+    margin-bottom: 300px;
 
-        .jv-tab .jv-icon {
-            margin-right: 5px;
-            vertical-align: -2px;
-        }
+    .jv-tab .jv-icon {
+        margin-right: 5px;
+        vertical-align: -2px;
+    }
 
+    .jv-tab__pane {
+        background-color: #fff;
+        padding: 20px;
+    }
+
+    .jv-tabs--card .jv-tab__pane {
+        background-color: transparent;
+    }
+
+    .custom-tabwrap .jv-tab-active {
+        color: #20a0ff;
+    }
+    .custom-tabwrap .jv-tabs-nav-bar {
+        background: #20a0ff;
+    }
+    .custom-pane {
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .jv-doc-demo-block:last-child {
         .jv-tab__pane {
-            background-color: #fff;
-            padding: 20px;
-        }
-
-        .jv-tabs--card .jv-tab__pane {
-            background-color: transparent;
-        }
-
-        .custom-tabwrap .jv-tab-active {
-            color: #20a0ff;
-        }
-        .custom-tabwrap .jv-tabs-nav-bar {
-            background: #20a0ff;
-        }
-        .custom-pane {
-            text-align: center;
-            height: 50px;
-            line-height: 50px;
-        }
-
-        .jv-doc-demo-block:last-child {
-            .jv-tab__pane {
-                padding: 50px 20px;
-            }
+            padding: 50px 20px;
         }
     }
+}
 </style>

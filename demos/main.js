@@ -1,51 +1,45 @@
 /**
  * Created by yangjiali on 2018/4/8.
  */
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
-import JVui from '../src/components/index.js'
-Vue.use(JVui)
-
-import App from './app'
-import Index from './pages/index'
-import Home from './pages/home'
-
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import JVui from '../src/components/index.js';
+import App from './app';
+import Index from './pages/index';
+import Home from './pages/home';
 // Basic
-import Badge from './pages/badge'
-import Button from './pages/button'
-import Icon from './pages/icon'
-
+import Badge from './pages/badge';
+import Button from './pages/button';
+import Icon from './pages/icon';
 // Layout
-import Cell from './pages/cell'
-import NavBar from './pages/nav-bar'
-import Tabs from './pages/tabs'
-import Popup from './pages/popup'
-
+import Cell from './pages/cell';
+import NavBar from './pages/nav-bar';
+import Tabs from './pages/tabs';
+import Popup from './pages/popup';
 // Advanced
-import Area from './pages/area'
-import Picker from './pages/picker'
-import Swipe from './pages/swipe'
+import Area from './pages/area';
+import Picker from './pages/picker';
+import Swipe from './pages/swipe';
+Vue.use(VueRouter);
+Vue.use(JVui);
 
 const routes = [
-    { path: '/', component: Index },
-    { path: '/home', component: Home },
+    {path: '/', component: Index},
+    {path: '/home', component: Home},
 
-    { path: '/basic/badge', component: Badge },
-    { path: '/basic/button', component: Button },
-    { path: '/basic/icon', component: Icon },
+    {path: '/basic/badge', component: Badge},
+    {path: '/basic/button', component: Button},
+    {path: '/basic/icon', component: Icon},
 
+    {path: '/layout/cell', component: Cell},
+    {path: '/layout/navBar', component: NavBar},
+    {path: '/layout/tabs', component: Tabs},
+    {path: '/layout/popup', component: Popup},
 
-    { path: '/layout/cell', component: Cell },
-    { path: '/layout/navBar', component: NavBar },
-    { path: '/layout/tabs', component: Tabs },
-    { path: '/layout/popup', component: Popup },
-
-    { path: '/advanced/area', component: Area },
-    { path: '/advanced/picker', component: Picker },
-    { path: '/advanced/swipe', component: Swipe },
+    {path: '/advanced/area', component: Area},
+    {path: '/advanced/picker', component: Picker},
+    {path: '/advanced/swipe', component: Swipe}
 ];
-
 
 // const beforeEach = (toRoute, fromRoute, next) => {
 //     const to = toRoute.path
@@ -115,7 +109,7 @@ const routes = [
 
 const router = new VueRouter({
     routes: routes
-})
+});
 
 // register global guards
 // router.beforeEach(beforeEach)
@@ -126,4 +120,3 @@ new Vue({ // eslint-disable-line
     router,
     el: '#app'
 });
-
