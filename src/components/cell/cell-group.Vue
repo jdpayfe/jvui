@@ -5,14 +5,14 @@
 </template>
 
 <script>
-    export default {
-        name: 'jv-cell-group',
+export default {
+    name: 'jv-cell-group',
 
-        props: {
-            border: {
-                type: Boolean,
-                default: true
-            }
+    props: {
+        border: {
+            type: Boolean,
+            default: true
         }
-    };
+    }
+};
 </script>

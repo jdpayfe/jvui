@@ -4,7 +4,6 @@ const config = require('./webpack.prod.conf.js');
 const isMinify = process.argv.indexOf('-p') !== -1;
 
 module.exports = Object.assign({}, config, {
-    // mode: 'production',
     entry: {
         'jvui': './src/components/index.js'
     },
@@ -14,7 +13,7 @@ module.exports = Object.assign({}, config, {
         libraryTarget: 'umd',
         filename: isMinify ? '[name].min.js' : '[name].js',
         umdNamedDefine: true,
-        // globalObject: 'this'
+        globalObject: 'this'
     },
     externals: {
         vue: {
@@ -27,7 +26,7 @@ module.exports = Object.assign({}, config, {
     plugins: [
     ],
     performance: false,
-    // optimization: {
-    //     minimize: isMinify
-    // }
+    optimization: {
+        minimize: isMinify
+    }
 });

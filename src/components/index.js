@@ -1,10 +1,5 @@
-/**
- * Created by yangjiali on 2018/3/30.
- */
-// css
 import '../style/common/rem/rem.js';
 import '../style/index.scss';
-
 // vue
 import JVArea from './area/area';
 import JVBadge from './badge/badge';
@@ -20,7 +15,6 @@ import JVSwipe from './swipe/swipe';
 import JVSwipeItem from './swipe/swipe-item';
 import JVTab from './tabs/tab';
 import JVTabs from './tabs/tabs';
-
 
 const components = [
     JVArea,
@@ -40,7 +34,7 @@ const components = [
 ];
 
 const install = (Vue) => {
-    components.forEach( (Component) => {
+    components.forEach((Component) => {
         Vue.component(Component.name, Component);
     });
 };
@@ -69,4 +63,4 @@ export {
 
 export default {
     install
-}
+};

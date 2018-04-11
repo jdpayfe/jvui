@@ -12,23 +12,23 @@
 </template>
 
 <script>
-    export default {
-        name: 'modal',
+export default {
+    name: 'modal',
 
-        props: {
-            visible: Boolean,
-            zIndex: Number,
-            className: String,
-            customStyle: Object
-        },
+    props: {
+        visible: Boolean,
+        zIndex: Number,
+        className: String,
+        customStyle: Object
+    },
 
-        computed: {
-            style() {
-                return {
-                    zIndex: this.zIndex,
-                    ...this.customStyle
-                };
-            }
+    computed: {
+        style () {
+            return {
+                zIndex: this.zIndex,
+                ...this.customStyle
+            };
         }
-    };
+    }
+};
 </script>

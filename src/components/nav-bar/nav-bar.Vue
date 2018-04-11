@@ -23,38 +23,38 @@
 </template>
 
 <script>
-    import JvIcon from '../icon/icon'
+import JvIcon from '../icon/icon';
 
-    export default {
-        name: 'jv-nav-bar',
+export default {
+    name: 'jv-nav-bar',
 
-        components: {
-            JvIcon
-        },
-        props: {
-            title: String,
-            leftText: String,
-            rightText: String,
-            leftArrow: Boolean,
-            rightIcon: Boolean,
-            fixed: Boolean,
-            zIndex: {
-                type: Number,
-                default: 1
-            }
-        },
-        data () {
-        	return {
-                leftBgUrl: require('src/image/arrow-left.png'),
-                rightBgUrl: require('src/image/threeSpot.png')
-            };
-        },
-        computed: {
-            style() {
-                return {
-                    zIndex: this.zIndex
-                };
-            }
+    components: {
+        JvIcon
+    },
+    props: {
+        title: String,
+        leftText: String,
+        rightText: String,
+        leftArrow: Boolean,
+        rightIcon: Boolean,
+        fixed: Boolean,
+        zIndex: {
+            type: Number,
+            default: 1
         }
-    };
+    },
+    data () {
+        return {
+            leftBgUrl: require('src/image/arrow-left.png'),
+            rightBgUrl: require('src/image/threeSpot.png')
+        };
+    },
+    computed: {
+        style () {
+            return {
+                zIndex: this.zIndex
+            };
+        }
+    }
+};
 </script>

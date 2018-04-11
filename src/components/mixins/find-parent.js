@@ -3,14 +3,13 @@
  */
 
 export default {
-    data() {
+    data () {
         return {
             parent: null
         };
     },
-    
     methods: {
-        findParent(name) {
+        findParent (name) {
             let parent = this.$parent;
             while (parent) {
                 if (parent.$options.name === name) {

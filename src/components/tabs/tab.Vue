@@ -1,33 +1,35 @@
 <template>
-	<div class="jv-tab__pane" :class="{'jv-tab__pane--select': index === parent.curActive }">
-        <slot />
-	</div>
+    <div class="jv-tab__pane" :class="{'jv-tab__pane--select': index === parent.curActive }">
+        <slot/>
+    </div>
 </template>
 
 <script>
-    import findParent from '../mixins/find-parent';
+import findParent from '../mixins/find-parent';
 
-	export default {
-		name: 'jv-tab',
+/* slot
+ * title 自定义标签
+ * */
+export default {
+    name: 'jv-tab',
 
-        mixins: [findParent],
+    mixins: [findParent],
 
-        props: {
-			title: String, // 	标题
-            disabled: Boolean // 	是否禁用标签
-        },
-        computed: {
-			index () {
-				return this.parent.tabs.indexOf(this);
-            }
-        },
-        created () {
-			this.findParent('jv-tabs');
-			this.parent.tabs.push(this);
-        },
-        destroyed () {
-			this.parent.tabs.splice(this.index, 1)
+    props: {
+        title: String, //   标题
+        disabled: Boolean //    是否禁用标签
+    },
+    computed: {
+        index () {
+            return this.parent.tabs.indexOf(this);
         }
-    };
+    },
+    created () {
+        this.findParent('jv-tabs');
+        this.parent.tabs.push(this);
+    },
+    destroyed () {
+        this.parent.tabs.splice(this.index, 1);
+    }
+};
 </script>
-

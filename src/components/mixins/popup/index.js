@@ -1,7 +1,7 @@
-import manager from "./manager";
-import context from "./context";
-import scrollUtils from "../../utils/scroll";
-import {on, off} from "../../utils/event";
+import manager from './manager';
+import context from './context';
+import scrollUtils from '../../utils/scroll';
+import {on, off} from '../../utils/event';
 
 export default {
     props: {
@@ -27,20 +27,20 @@ export default {
     },
 
     watch: {
-        value(val) {
+        value (val) {
             this[val ? 'open' : 'close']();
         },
 
-        getContainer() {
+        getContainer () {
             this.move();
         },
 
-        overlay() {
+        overlay () {
             this.renderOverlay();
         }
     },
 
-    created() {
+    created () {
         this._popupId = 'popup-' + context.plusKey('id');
         this.pos = {
             x: 0,
@@ -48,7 +48,7 @@ export default {
         };
     },
 
-    mounted() {
+    mounted () {
         if (this.getContainer) {
             this.move();
         }
@@ -57,12 +57,12 @@ export default {
         }
     },
 
-    beforeDestroy() {
+    beforeDestroy () {
         this.close();
     },
 
     methods: {
-        open() {
+        open () {
             /* istanbul ignore next */
             if (this.$isServer) {
                 return;
@@ -83,7 +83,7 @@ export default {
             this.$emit('input', true);
         },
 
-        close() {
+        close () {
             if (this.lockScroll) {
                 document.body.classList.remove('jv-overflow-hidden');
                 off(document, 'touchstart', this.onTouchStart);
@@ -94,7 +94,7 @@ export default {
             this.$emit('input', false);
         },
 
-        move() {
+        move () {
             if (this.getContainer) {
                 this.getContainer().appendChild(this.$el);
             } else if (this.$parent) {
@@ -102,14 +102,14 @@ export default {
             }
         },
 
-        onTouchStart(e) {
+        onTouchStart (e) {
             this.pos = {
                 x: e.touches[0].clientX,
                 y: e.touches[0].clientY
             };
         },
 
-        onTouchMove(e) {
+        onTouchMove (e) {
             const {pos} = this;
             const dx = e.touches[0].clientX - pos.x;
             const dy = e.touches[0].clientY - pos.y;
@@ -137,7 +137,7 @@ export default {
             }
         },
 
-        renderOverlay() {
+        renderOverlay () {
             if (this.overlay) {
                 manager.open(this, {
                     zIndex: context.plusKey('zIndex'),
