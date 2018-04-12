@@ -3,7 +3,7 @@
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import JVui from '../src/components/index.js';
+import JVui, { JVLazyload } from '../src/components/index.js';
 import App from './app';
 import Index from './pages/index';
 import Home from './pages/home';
@@ -18,10 +18,17 @@ import Tabs from './pages/tabs';
 import Popup from './pages/popup';
 // Advanced
 import Area from './pages/area';
+import DatetimePicker from './pages/datetime-picker';
 import Picker from './pages/picker';
 import Swipe from './pages/swipe';
+// directive
+import Lazyload from './pages/lazyload';
+
 Vue.use(VueRouter);
 Vue.use(JVui);
+Vue.use(JVLazyload, {
+    lazyComponent: true
+});
 
 const routes = [
     {path: '/', component: Index},
@@ -37,8 +44,12 @@ const routes = [
     {path: '/layout/popup', component: Popup},
 
     {path: '/advanced/area', component: Area},
+    {path: '/advanced/datetimePicker', component: DatetimePicker},
     {path: '/advanced/picker', component: Picker},
-    {path: '/advanced/swipe', component: Swipe}
+    {path: '/advanced/swipe', component: Swipe},
+
+    {path: '/directive/lazyload', component: Lazyload}
+
 ];
 
 // const beforeEach = (toRoute, fromRoute, next) => {

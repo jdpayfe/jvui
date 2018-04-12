@@ -67,19 +67,6 @@ npm run dev
     2.3 src/style/下: scss 存放组件样式,common中公共样式，index.scss导出所有组件样式文件
 ```
 
-##现有组件
-``` bash
-1.选择省市区area
-2.徽章badge
-3.按钮button
-4.单元格cell
-5.图标icon (使用设计稿中切图)
-6.导航条nav-bar
-7.选择列表picker
-8.遮罩弹框popup
-9.轮播swipe
-10.选项卡tabs
-```
 #开发
 ##建议规则
 ``` bash

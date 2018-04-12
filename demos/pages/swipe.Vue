@@ -14,13 +14,10 @@
         </div>
 
         <div class="block-title">图片懒加载</div>
-        <!--TODO 暂未添加懒加载指令-->
         <div class="block">
             <jv-swipe :autoplay="3000">
                 <jv-swipe-item v-for="(image, index) in images" :key="index">
-                    <!--<img v-lazy="image">-->
-                    <img :src="image">
-
+                    <img v-lazy="image">
                 </jv-swipe-item>
             </jv-swipe>
         </div>

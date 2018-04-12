@@ -54,12 +54,19 @@ export default{
                     blockTitle: '高级',
                     members: [
                         {name: '省市区 - Area', router: '/advanced/area'},
+                        {name: '时间选择器 - datetimePicker', router: '/advanced/datetimePicker'},
                         {name: '选择器 - Picker', router: '/advanced/picker'},
                         {name: '轮播 - Swipe', router: '/advanced/swipe'}
 
                     ]
-                }
+                },
+                directive: {
+                    blockTitle: '指令',
+                    members: [
+                        {name: '懒加载 - Lazyload', router: '/directive/lazyload'}
 
+                    ]
+                }
             }
         };
     },

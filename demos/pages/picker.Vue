@@ -31,26 +31,45 @@
 
         </div>
 
-        <div class="block-title">加载状态</div>
-        <div class="block">
-            <jv-picker :columns="columns" loading/>
-
-        </div>
+        <!--<div class="block-title">加载状态</div>-->
+        <!--todo 待添加loading组件后补充-->
+        <!--<div class="block">-->
+            <!--<jv-picker :columns="columns" loading/>-->
+        <!--</div>-->
 
         <div class="block-title">微商城中picker</div>
         <div class="block">
-            <jv-picker class="custom-lm"
+            <jv-button @click="show1 = true;">请选择地址(单列)</jv-button>
+
+            <jv-popup v-model="show1" position="bottom">
+                <jv-picker class="custom-lm"
                 show-toolbar
                 mask
                 title="请选择地址"
                 itemHeight=".49rem"
                 cancelButtonText=" "
                 :columns="weiArr"
-                @cancel="onCancel"
+                @cancel="show1 = false;"
                 @confirm="onConfirm"
-            />
+            /></jv-popup>
         </div>
 
+        <div class="block">
+            <jv-button @click="show2 = true;">请选择时间(两列：月日周，时间段；不联动)</jv-button>
+
+            <jv-popup v-model="show2" position="bottom">
+                <jv-picker class="custom-lm custom-lm2"
+                    show-toolbar
+                    mask
+                    title="请选择地址"
+                    itemHeight=".49rem"
+                    cancelButtonText=" "
+                    :columns="datetimeColumns"
+                    @cancel="show2 = false;"
+                    @confirm="onConfirm"
+                /></jv-popup>
+
+        </div>
     </div>
 </template>
 
@@ -71,7 +90,36 @@ export default{
                 浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
                 福建: ['福州', '厦门', '莆田', '三明', '泉州']
             },
-            weiArr: ['六环以外', '五环至六环之间', '四环至五环之间', '亦庄开发区']
+            datetimePicker: {
+                '12月09日(周五)': [
+                    '07:00-09:00',
+                    '11:00-13:00',
+                    '15:00-19:00'
+                ],
+                '12月10日(周六)': [
+                    '07:00-09:00',
+                    '11:00-13:00',
+                    '15:00-19:00'
+                ],
+                '12月11日(周日)': [
+                    '07:00-09:00',
+                    '11:00-13:00',
+                    '15:00-19:00'
+                ],
+                '12月12日(周一)': [
+                    '07:00-09:00',
+                    '11:00-13:00',
+                    '15:00-19:00'
+                ],
+                '12月13日(周二)': [
+                    '07:00-09:00',
+                    '11:00-13:00',
+                    '15:00-19:00'
+                ]
+            },
+            weiArr: ['六环以外', '五环至六环之间', '四环至五环之间', '亦庄开发区'],
+            show1: false,
+            show2: false
         };
     },
 
@@ -87,6 +135,22 @@ export default{
                     values: column[Object.keys(column)[0]],
                     className: 'column2',
                     defaultIndex: 2
+                }
+            ];
+        },
+        datetimeColumns () {
+            const column = this.datetimePicker;
+            console.log('Object.keys(column)', Object.keys(column));
+            console.log('column[Object.keys(column)[0]]', column[Object.keys(column)[0]]);
+            return [
+                {
+                    values: Object.keys(column),
+                    className: 'column1'
+                },
+                {
+                    values: column[Object.keys(column)[0]],
+                    className: 'column2'
+                    // defaultIndex: 2
                 }
             ];
         }
@@ -160,6 +224,10 @@ export default{
             font-size: .18rem;
             color: #EE3D3D;
         }
+
+    }
+
+    .custom-lm2 {
 
     }
 

@@ -8,6 +8,7 @@ import JVCell from './cell/cell';
 import JVCellGroup from './cell/cell-group';
 import JVIcon from './icon/icon';
 import JVNavBar from './nav-bar/nav-bar';
+import JVDatetimePicker from './datetime-picker/datetime-picker';
 import JVPicker from './picker/picker';
 import JVPickerColumn from './picker/picker-column';
 import JVPopup from './popup/popup';
@@ -15,6 +16,9 @@ import JVSwipe from './swipe/swipe';
 import JVSwipeItem from './swipe/swipe-item';
 import JVTab from './tabs/tab';
 import JVTabs from './tabs/tabs';
+
+// 指令
+import JVLazyload from './lazyload/lazyload.js';
 
 const components = [
     JVArea,
@@ -24,6 +28,7 @@ const components = [
     JVCellGroup,
     JVIcon,
     JVNavBar,
+    JVDatetimePicker,
     JVPicker,
     JVPickerColumn,
     JVPopup,
@@ -52,13 +57,16 @@ export {
     JVCellGroup,
     JVIcon,
     JVNavBar,
+    JVDatetimePicker,
     JVPicker,
     JVPickerColumn,
     JVPopup,
     JVSwipe,
     JVSwipeItem,
     JVTab,
-    JVTabs
+    JVTabs,
+    // 指令
+    JVLazyload
 };
 
 export default {
