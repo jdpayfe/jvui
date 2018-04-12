@@ -21,7 +21,7 @@ npm run dev
 2. 在项目中安装组件库
 ``` bash
     需要在packages.json->dependencies中添加：
-    "jdpayui": "git+http://source.jd.com/app/jdpay-ui.git#dev"
+    "jvui": "git+http://source.jd.com/app/jdpay-ui.git#dev"
     
     然后npm install,或者直接：
     npm install git+http://source.jd.com/app/jdpay-ui.git#dev
@@ -29,8 +29,8 @@ npm run dev
 3. 在项目中导入所有组件
 ``` bash
     // main.js中
-    import JVui from 'jdpayui'
-    import 'jdpayui/lib/jvui.css'
+    import JVui from 'jvui'
+    import 'jvui/lib/jvui.css'
 
     Vue.use(JVui)
     
@@ -47,7 +47,7 @@ npm run dev
   </template>
   
   <script>
-  import {JVButton} from 'jdpayui'
+  import {JVButton} from 'jvui'
   
   export default {
     components: {
