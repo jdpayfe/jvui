@@ -12,7 +12,7 @@ npm install
 npm run dev
 
 ```
-
+#使用
 ##组件库
 1. 示例线上地址：
 ``` bash
@@ -80,7 +80,7 @@ npm run dev
 9.轮播swipe
 10.选项卡tabs
 ```
-
+#开发
 ##建议规则
 ``` bash
 1、文件命名使用中划线链接
@@ -94,6 +94,12 @@ npm run dev
                                   "jv-tabs__wrap--top"
 
 ```
+##开发完一个组件实例后，需要做什么
+``` bash
+1. 打包demos代码，并更新到线上dev环境 -> npm run build
+2. 打包jvui组件库代码，提交后，需要使用最新库的项目需要再次install同步代码 -> npm run build:jvui
+```
+#参考
 ##ui组件库参考
 ``` bash
 1. https://www.youzanyun.com/zanui/vant#/zh-CN/intro

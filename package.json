@@ -1,7 +1,7 @@
 {
-  "name": "jdpayui",
+  "name": "jvui",
   "version": "1.0.0",
-  "description": "jdpayui vue ui",
+  "description": "jdpay vue ui",
   "main": "lib/jvui.js",
   "author": "'yangjiali' <'yangjiali@jd.com'>",
   "homepage": "http://pb.jd.com/jdpayui/index.html",
