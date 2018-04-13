@@ -16,7 +16,7 @@
 
                 <jv-cell :value="content"/>
 
-                <div class="block-title">多行value</div>
+                <div class="block-title">多列value</div>
 
                 <jv-cell :value="content" :valInColumn="false">
                     <template slot="title">
@@ -32,20 +32,45 @@
                     </template>
                 </jv-cell>
 
-                <div class="block-title">多列value</div>
+                <div class="block-title">多行value</div>
 
                 <jv-cell :value="content" :valInColumn="true">
                     <template slot="title">
                         <span class="jv-cell__text">{{ cell}}</span>
-                        <!--<span class="jv-cell__label">{{ desc }}1</span>-->
-                        <!--<span class="jv-cell__label">{{ desc }}2</span>-->
-
                     </template>
 
                     <template>
                         <span>{{ content}}1</span>
                         <span>{{ content}}2</span>
                     </template>
+                </jv-cell>
+                <jv-cell :value="content" is-link :valInColumn="true" class="multi-column">
+                    <template slot="title">
+                        <span class="jv-cell__text">支付配送</span>
+                    </template>
+
+                    <template>
+                        <span>在线支付</span>
+                        <span>京东大厦A座</span>
+                        <span>12月6日(周三)</span>
+                    </template>
+
+                    <!--<jv-icon slot="right-icon" :bgUrl="searchIcon" :width="0.2" :height="0.2"-->
+                        <!--class="jv-cell__right-icon"/>-->
+                </jv-cell>
+
+                <jv-cell :value="content" :valInColumn="true" class="multi-column2">
+                    <template slot="title">
+                        <span class="jv-cell__text">送至</span>
+                    </template>
+
+                    <template>
+                        <span>北京大兴区亦庄开发区科创十二街…</span>
+                        <span>现货，11点之前下单预计今天(12月14日)送达</span>
+                    </template>
+
+                    <jv-icon slot="right-icon" :bgUrl="threeSpot" :width="0.2" :height="0.2"
+                    class="jv-cell__right-icon"/>
                 </jv-cell>
             </jv-cell-group>
         </div>
@@ -57,9 +82,9 @@
                 <jv-cell :value="content" is-link @click="showTips">
                     <template slot="title">
                         <span class="jv-cell-text">{{ cell }}</span>
-                        <!--<jv-tag type="danger">{{ $t('tag') }}</jv-tag>-->
                     </template>
                 </jv-cell>
+
                 <div class="block-title">icon、clickable用法</div>
 
                 <jv-cell :title="cell" :icon="bgUrl" clickable @click="showTips"/>
@@ -118,6 +143,7 @@ export default{
             bgUrl2: require('src/image/selectAddress.png'),
             searchIcon: require('src/image/searchSmall.png'),
             selectedIcon: require('src/image/selected.png'),
+            threeSpot: require('src/image/threeSpot.png'),
             title: this.$route.query.title,
             cell: '单元格',
             content: '内容',
@@ -143,6 +169,10 @@ export default{
 
     .block-title {
         background-color: #f8f8f8;
+    }
+
+    .jv-cell__right-icon {
+        /*margin-top: 50%;*/
     }
 
     .jv-extend__select {
@@ -198,6 +228,25 @@ export default{
         .jv-cell__title .jv-icon {
             background-size: 0.12rem 0.15rem!important;
             margin-right: .1rem !important;
+        }
+    }
+
+    .multi-column {
+        .jv-cell__value {
+            padding-right: .3rem;
+        }
+    }
+
+    .multi-column2 {
+        .jv-cell__value {
+            padding-right: .3rem;
+            margin-left: .25rem;
+            text-align: left;
+        }
+
+        .jv-cell__right-icon {
+            top: .1rem;
+            transform: none;
         }
     }
 }

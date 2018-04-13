@@ -1,7 +1,7 @@
 
 .jv-cell {
     width: 100%;
-    display: table;
+    display: flex;
     padding: .1rem .15rem;
     box-sizing: border-box;
     line-height: .24rem;
@@ -24,7 +24,6 @@
     }
 
     &__title {
-        display: table-cell;
 
         .jv-icon {
             font-size: .16rem;
@@ -45,7 +44,7 @@
     }
 
     &__value {
-        display: table-cell;
+        flex: 1;
         text-align: right;
         vertical-align: middle;
         overflow: hidden;
