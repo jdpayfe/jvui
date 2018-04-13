@@ -11,6 +11,7 @@ import Home from './pages/home';
 import Badge from './pages/badge';
 import Button from './pages/button';
 import Icon from './pages/icon';
+import Radio from './pages/radio';
 // Layout
 import Cell from './pages/cell';
 import NavBar from './pages/nav-bar';
@@ -37,6 +38,7 @@ const routes = [
     {path: '/basic/badge', component: Badge},
     {path: '/basic/button', component: Button},
     {path: '/basic/icon', component: Icon},
+    {path: '/basic/radio', component: Radio},
 
     {path: '/layout/cell', component: Cell},
     {path: '/layout/navBar', component: NavBar},

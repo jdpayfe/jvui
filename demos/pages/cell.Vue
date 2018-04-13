@@ -226,7 +226,6 @@ export default{
         }
 
         .jv-cell__title .jv-icon {
-            background-size: 0.12rem 0.15rem!important;
             margin-right: .1rem !important;
         }
     }

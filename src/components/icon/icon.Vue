@@ -18,28 +18,27 @@ export default {
             type: Number,
             require: true
         },
-        height: { // 高
-            type: Number,
-            require: true
-        },
-        bgWidth: Number, // 背景图宽
-        bgHeight: Number // 背景图高
+        height: Number, // 高 可省略 则默认为宽
+        bgWidth: Number, // 背景图宽 可省略 则默认为 宽
+        bgHeight: Number // 背景图高 可省略 则默认为 高
         // info: String
     },
     computed: {
         styleObj () {
             return {
                 width: `${this.width}rem`,
-                height: `${this.height}rem`,
-                background: `url(${this.bgUrl}) no-repeat center`,
-                backgroundSize: `${this.bg_width}rem ${this.bg_height}rem`
+                height: `${this.compHeight}rem`,
+                background: `url(${this.bgUrl}) center center / ${this.bg_width}rem ${this.bg_height}rem no-repeat`
             };
+        },
+        compHeight () {
+            return this.height ? this.height : this.width;
         },
         bg_width () {
             return this.bgWidth ? this.bgWidth : this.width;
         },
         bg_height () {
-            return this.bgHeight ? this.bgHeight : this.height;
+            return this.bgHeight ? this.bgHeight : this.compHeight;
         }
     }
 };

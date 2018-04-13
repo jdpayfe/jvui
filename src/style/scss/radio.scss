@@ -1,0 +1,53 @@
+$jv-radio-size: .2rem;
+
+.jv-radio {
+    overflow: hidden;
+    user-select: none;
+
+    &__input,
+    &__label {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__input {
+        position: relative;
+        height: $jv-radio-size;
+    }
+
+    &__control {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__label {
+        line-height: $jv-radio-size;
+        margin-left: .1rem;
+    }
+
+    //.jv-icon {
+    //    pointer-events: none;
+    //    font-size: $jv-radio-size;
+    //}
+    //
+    //.jv-icon-checked {
+    //    color: $green;
+    //}
+    //
+    //.jv-icon-check {
+    //    color: $gray-dark;
+    //}
+
+    &--disabled {
+        .jv-icon {
+            color: $gray-light;
+            border-radius: 100%;
+            background-color: $background-color;
+        }
+    }
+}

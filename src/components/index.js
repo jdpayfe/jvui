@@ -16,6 +16,8 @@ import JVSwipe from './swipe/swipe';
 import JVSwipeItem from './swipe/swipe-item';
 import JVTab from './tabs/tab';
 import JVTabs from './tabs/tabs';
+import JVRadio from './radio/radio';
+import JVRadioGroup from './radio/radio-group';
 
 // 指令
 import JVLazyload from './lazyload/lazyload.js';
@@ -35,7 +37,9 @@ const components = [
     JVSwipe,
     JVSwipeItem,
     JVTab,
-    JVTabs
+    JVTabs,
+    JVRadio,
+    JVRadioGroup
 ];
 
 const install = (Vue) => {
@@ -65,6 +69,9 @@ export {
     JVSwipeItem,
     JVTab,
     JVTabs,
+    JVRadio,
+    JVRadioGroup,
+
     // 指令
     JVLazyload
 };

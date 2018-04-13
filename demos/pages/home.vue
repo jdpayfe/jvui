@@ -37,7 +37,8 @@ export default{
                     members: [
                         {name: '徽章 - Badge', router: '/basic/badge'},
                         {name: '按钮 - Button', router: '/basic/button'},
-                        {name: '图标 - Icon', router: '/basic/icon'}
+                        {name: '图标 - Icon', router: '/basic/icon'},
+                        {name: '单选框 - Radio', router: '/basic/radio'}
                     ]
                 },
                 layout: {
