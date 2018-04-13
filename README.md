@@ -2,13 +2,19 @@
 
 > vue ui
 
-## Build Setup
+## 初始化项目 npm
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8066
+// 开发时版本：node v8.9.4
+              npm 5.6.0
+// npm install 时部分包失败可使用cnpm镜像
+  （npm install -g cnpm --registry=https://registry.npm.taobao.org）
+// 
+
+# 
 npm run dev
 
 ```
