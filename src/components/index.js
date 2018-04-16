@@ -1,4 +1,4 @@
-import '../style/common/rem/rem.js';
+// import '../style/common/rem/rem.js';
 import '../style/index.scss';
 // vue
 import JVArea from './area/area';
