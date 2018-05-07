@@ -17,6 +17,7 @@ import Cell from './pages/cell';
 import NavBar from './pages/nav-bar';
 import Tabs from './pages/tabs';
 import Popup from './pages/popup';
+import Tabbar from './pages/tabbar';
 // Advanced
 import Area from './pages/area';
 import DatetimePicker from './pages/datetime-picker';
@@ -44,6 +45,7 @@ const routes = [
     {path: '/layout/navBar', component: NavBar},
     {path: '/layout/tabs', component: Tabs},
     {path: '/layout/popup', component: Popup},
+    {path: '/layout/tabbar', component: Tabbar},
 
     {path: '/advanced/area', component: Area},
     {path: '/advanced/datetimePicker', component: DatetimePicker},

@@ -16,7 +16,8 @@ export default {
         },
         width: { // 宽
             type: Number,
-            require: true
+            // require: true,
+            default: 0.2
         },
         height: Number, // 高 可省略 则默认为宽
         bgWidth: Number, // 背景图宽 可省略 则默认为 宽

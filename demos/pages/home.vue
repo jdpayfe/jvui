@@ -47,8 +47,8 @@ export default{
                         {name: '单元格 - Cell', router: '/layout/cell'},
                         {name: '导航条 - NavBar', router: '/layout/navBar'},
                         {name: '选项卡 - Tabs', router: '/layout/tabs'},
-                        {name: '弹出层 - Popup', router: '/layout/popup'}
-
+                        {name: '弹出层 - Popup', router: '/layout/popup'},
+                        {name: '标签栏 - Tabbar', router: '/layout/tabbar'}
                     ]
                 },
                 advanced: {

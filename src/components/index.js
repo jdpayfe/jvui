@@ -18,6 +18,8 @@ import JVTab from './tabs/tab';
 import JVTabs from './tabs/tabs';
 import JVRadio from './radio/radio';
 import JVRadioGroup from './radio/radio-group';
+import JVTabbar from './tabbar/tabbar';
+import JVTabbarItem from './tabbar/tabbar-item';
 
 // 指令
 import JVLazyload from './lazyload/lazyload.js';
@@ -39,7 +41,9 @@ const components = [
     JVTab,
     JVTabs,
     JVRadio,
-    JVRadioGroup
+    JVRadioGroup,
+    JVTabbar,
+    JVTabbarItem
 ];
 
 const install = (Vue) => {
@@ -71,7 +75,8 @@ export {
     JVTabs,
     JVRadio,
     JVRadioGroup,
-
+    JVTabbar,
+    JVTabbarItem,
     // 指令
     JVLazyload
 };
