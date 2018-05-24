@@ -1,0 +1,24 @@
+{
+  "name": "jvui-css",
+  "version": "1.0.0",
+  "description": "jvui css.",
+  "main": "lib/index.css",
+  "style": "lib/index.css",
+  "files": [
+    "lib",
+    "scss"
+  ],
+  "scripts": {
+    "build": "gulp build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^4.0.1",
+    "postcss-easy-import": "^3.0.0",
+    "precss": "^2.0.0"
+  }
+}

@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const config = require('./webpack.prod.conf.js');
+const config = require('./webpack.base.conf.js');
 const isMinify = process.argv.indexOf('-p') !== -1;
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 

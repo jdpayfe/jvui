@@ -1,3 +1,4 @@
+@import '../common/var.scss';
 
 .jv-picker {
     overflow: hidden;
@@ -80,12 +81,12 @@
     &-column {
         flex: 1;
         overflow: hidden;
-        font-size: .16rem;
+        font-size: 16px;
         text-align: center;
 
         li {
             padding: 0 .05rem;
-            font-size: .16rem;
+            font-size: 16px;
             color: #999;
 
             &.jv-picker-column--selected {

@@ -1,3 +1,4 @@
+@import '../common/var.scss';
 
 $jv-tabs-line-height: .44rem;
 $jv-tabs-card-height: .3rem;
@@ -104,7 +105,7 @@ $jv-tabs-card-height: .3rem;
     flex: 1;
     cursor: pointer;
     padding: 0 .05rem;
-    font-size: .14rem;
+    font-size: 14px;
     position: relative;
     color: $text-color;
     line-height: $jv-tabs-line-height;
@@ -115,7 +116,7 @@ $jv-tabs-card-height: .3rem;
 
     span {
         display: block;
-        font-size: .14rem;
+        font-size: 14px;
         color: #333;
     }
 
@@ -124,7 +125,7 @@ $jv-tabs-card-height: .3rem;
     }
 
     &--active {
-        font-size: .14rem;
+        font-size: 14px;
         color: #EE3D3D;
     }
 

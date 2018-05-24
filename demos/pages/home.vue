@@ -93,7 +93,7 @@ export default{
 
     .jv-cell__text {
         font-family: "Monoton", sans-serif;
-        font-size: .16rem;
+        font-size: 16px;
         line-height: .16rem;
     }
 }

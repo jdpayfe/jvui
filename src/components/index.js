@@ -1,5 +1,5 @@
 // import '../style/common/rem/rem.js';
-import '../style/index.scss';
+import {setBaseFont} from '../style/common/scripts/rem.js';
 // vue
 import JVArea from './area/area';
 import JVBadge from './badge/badge';
@@ -20,7 +20,6 @@ import JVRadio from './radio/radio';
 import JVRadioGroup from './radio/radio-group';
 import JVTabbar from './tabbar/tabbar';
 import JVTabbarItem from './tabbar/tabbar-item';
-
 // 指令
 import JVLazyload from './lazyload/lazyload.js';
 
@@ -46,14 +45,16 @@ const components = [
     JVTabbarItem
 ];
 
-const install = (Vue) => {
+const install = (Vue, options) => {
+    let baseFont = options && options.baseFont ? options.baseFont : 100;
+    setBaseFont(document, window, baseFont);
     components.forEach((Component) => {
         Vue.component(Component.name, Component);
     });
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue);
+    install(window.Vue, {baseFont: 100});
 }
 
 export {

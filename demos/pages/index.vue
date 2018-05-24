@@ -55,7 +55,7 @@ export default{
     .code-name {
         text-align: center;
         font-family: "Monoton", sans-serif;
-        font-size: .24rem;
+        font-size: 24px;
         line-height: .24rem;
         color: #47B584;
         margin: .15rem 0 .1rem;
@@ -63,7 +63,7 @@ export default{
 
     .jv-cell__text {
         font-family: "Monoton", sans-serif;
-        font-size: .18rem;
+        font-size: 18px;
         line-height: .18rem;
     }
 

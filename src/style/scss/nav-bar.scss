@@ -1,3 +1,4 @@
+@import '../common/var.scss';
 
 .jv-nav-bar {
     height: .44rem;
@@ -29,13 +30,13 @@
     }
 
     &__title {
-        font-size: .16rem;
+        font-size: 16px;
     }
 
     &__left,
     &__right {
         bottom: 0;
-        font-size: .14rem;
+        font-size: 14px;
         position: absolute;
     }
 
