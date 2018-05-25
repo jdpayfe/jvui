@@ -2,7 +2,7 @@
     <div class="jv-area">
         <header class="jv-area__title">请选择地址</header>
         <slot name="close">
-            <span v-if="showCloseBtn" class="jv-area__cancel"></span>
+            <span v-if="showCloseBtn" class="jv-area__cancel">×</span>
         </slot>
         <slot name="confirm">
             <span v-if="showConfirmBtn" class="jv-area__confirm">确认</span>
