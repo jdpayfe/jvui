@@ -13,12 +13,12 @@
                         class="jv-cell__right-icon"/>
                 </jv-cell>
 
-                <jv-cell title="Code">
+                <jv-cell title="Code"  @click="code">
                     <jv-icon slot="right-icon" :bgUrl="arrowIconUrl" :width="0.2" :height="0.2"
                         class="jv-cell__right-icon"/>
                 </jv-cell>
 
-                <jv-cell title="Doc">
+                <jv-cell title="Doc"  @click="doc">
                     <jv-icon slot="right-icon" :bgUrl="arrowIconUrl" :width="0.2" :height="0.2"
                         class="jv-cell__right-icon"/>
                 </jv-cell>
@@ -42,6 +42,7 @@ export default{
         },
 
         code () {
+            window.open('http://source.jd.com/web/app/jdpay-ui');
         },
 
         doc () {

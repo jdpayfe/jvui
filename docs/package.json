@@ -1,0 +1,14 @@
+{
+  "name": "jvui-docs",
+  "version": "1.0.0",
+  "description": "jvui docs.",
+  "scripts": {
+    "build": "gulp concat"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "postcss-easy-import": "^3.0.0"
+  }
+}
