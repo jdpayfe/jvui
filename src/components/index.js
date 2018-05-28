@@ -48,6 +48,7 @@ const components = [
 const install = (Vue, options) => {
     let baseFont = options && options.baseFont ? options.baseFont : 100;
     setBaseFont(document, window, baseFont);
+
     components.forEach((Component) => {
         Vue.component(Component.name, Component);
     });

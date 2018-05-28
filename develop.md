@@ -15,32 +15,59 @@ jdPay ui 是 移动端Vue组件库
 ``` bash
     需要在packages.json->dependencies中添加：
     
-    "jvui": "git+http://source.jd.com/app/jdpay-ui.git#dev"
+    "jvui": "git+http://source.jd.com/app/jdpay-ui.git"
     
     然后npm install
 ```
-####3. 在项目中导入所有组件
+####3. 在项目中导入所有组件以及rem适配
 ``` bash
     // main.js中
-    import JVui from 'jvui'
-    import 'jvui/lib/jvui.css'
-
+    import jvui from 'jvui'
+    import 'jvui/lib/style/index.css'
+    
+    // (1) Vue.use不传参则使用jvui中默认的rem适配
     Vue.use(JVui)
+    
+    // 或(2) Vue.use传参则使用自定义的rem适配
+    Vue.use(jvui, {
+      baseFont: 37.5
+    })
     
     // 使用，例：
     <jv-button>基本按钮</jv-button>
 ```
+#####下面是jvui中rem适配的代码, baseFont默认使用100
 
-####4. 在项目中按需引入组件
+```bash
+    export const setBaseFont = function (doc, win, baseFont) {
+        let docEl = doc.documentElement;
+        let resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        let recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = baseFont * (clientWidth / 375) + 'px';
+        };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        let devicePixelRatio = window.devicePixelRatio;
+        docEl.setAttribute('data-dpr', devicePixelRatio);
+    };
+```
+
+####4. 在项目中按需引入组件，组件的rem适配会使用的引用jvui所在项目中的rem适配
 ``` bash
   <template>
     <div class="ui-wrapper">
       <jv-button>基本按钮</jv-button>
+  
     </div>
   </template>
   
   <script>
-  import {JVButton} from 'jvui'
+  import JVButton from 'jvui/lib/button/button.js'
+  import 'jvui/lib/style/base.css'
+  import 'jvui/lib/style/button.css'
   
   export default {
     components: {
@@ -87,9 +114,12 @@ npm run dev
     |--app.vue   
     |--index.html  
     |--main.js  // 每新增组件示例需要在这里添加相应的router
-|--lib  //执行npm run build:jvui生成
-    |--jvui.css  
-    |--jvui.js 
+|--lib  //先执行npm run build:components  然后npm run build:style   然后npm run build:jvui  
+    |--area
+    |--badge
+    |--...
+    |--index.js
+    |--jvui.js
 |--src
     |--assets  
     |--components // 所有组件源码
@@ -99,12 +129,12 @@ npm run dev
         |--common // 公共样式文件
         |--mixins // 一些样式的mixin
         |--scss // 所有组建的scss文件
-        |--index.scss // 统一导出所有scss文件，没新增的组建的scss文件需要在此添加
+            |--index.scss // 统一导出所有scss文件，没新增的组建的scss文件需要在此添加
 |--start // 执行npm run build 生成的，demo的包   
 |--static // 静态文件
 |--test // 单元测试--暂未使用
 |--package.json  // 配置文件
-
+|--develop.md // 使用开发说明
 ```
 
 
@@ -116,7 +146,8 @@ npm run dev
 1. 单个词： button, tabbar
 2. 多个词使用一个中划线（尽量使用不超过两个中划线）： tabbar-item
 3. demos/pages/下的组件文件名尽量与src/components/下的组件文件夹同名
-4. src/components/下组件文件夹中的文件尽量与文件夹同名
+4. src/components/下组件文件夹中的文件尽量与文件夹同名且vue文件的'.vue'必须是小写！！！
+
 ```
 
 ######3.2 组件命名 - 组件源码中需有属性 name: 'jv-组件名'， 组件名加前缀jv-
@@ -149,20 +180,24 @@ npm run dev
 ``` bash  
     主要步骤：
     
-    1. 添加 Vue 代码
+    1. 添加 vue 代码
     以添加新组件 Tabbar 为例，首先在 src/components 目录下新建目录 tabbar，用 tabbar.vue 文件做为组件入口，需要的话可以建其他文件tabbar-item.vue来组织代码。
     
     2. 添加样式代码
     组件对应的样式需要放到 src/style/scss 目录下，Tabbar 组件的话需要新建一个文件 tabbar.scss 如若个组件样式比较复杂，为了方便组织代码可以在 src/style/scss 下面新建一个同名目录 tabbar，里面可以放一些 partial 样式。
     
-    新添加的 tabbar.scss 文件需要在 src/style/index.scss 中手动 import。
+    新添加的 tabbar.scss 文件需要在 src/style/scss/index.scss 中手动 import。
     
     3. 添加demo
     以添加新组件 Tabbar 的demo为例在 demos/pages 下创建组件示例tabbar.vue, 在home.vue中添加入口和main.js中添加路由
     
     4. 打包demos代码，并更新到线上dev环境 -> npm run build
     
-    5. 打包jvui组件库代码，提交后，需要使用最新库的项目需要再次install同步代码 -> npm run build:jvui
+    5. 打包jvui组件库代码，先执行npm run build:components --for组件按需引用
+                        然后npm run build:style --编译src/style/scss下的scss文件并copy到根目录下的lib/style中 
+                        然后npm run build:jvui --组件库入口文件
+    
+    
 ```
 
 ####5. 一些实用技巧
