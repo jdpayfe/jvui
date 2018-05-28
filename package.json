@@ -15,6 +15,7 @@
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
     "build:components": "node build/build-components.js --color",
+    "build:api": "gulp concat --gulpfile docs/gulpfile.js --color",
     "build:style": "gulp build --gulpfile src/style/gulpfile.js --color",
     "build:jvui": "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js"
   },

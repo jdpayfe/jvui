@@ -174,21 +174,25 @@ npm run dev
     1. 添加 vue 代码
     以添加新组件 Tabbar 为例，首先在 src/components 目录下新建目录 tabbar，用 tabbar.vue 文件做为组件入口，需要的话可以建其他文件tabbar-item.vue来组织代码。
     
-    2. 添加样式代码
+    2. 添加组件对应的api文档
+    在./docs/zh/api/下添加组件的api说明，使用md文件，文件名与组件同名
+    
+    3. 添加样式代码
     组件对应的样式需要放到 src/style/scss 目录下，Tabbar 组件的话需要新建一个文件 tabbar.scss 如若个组件样式比较复杂，为了方便组织代码可以在 src/style/scss 下面新建一个同名目录 tabbar，里面可以放一些 partial 样式。
     
     新添加的 tabbar.scss 文件需要在 src/style/scss/index.scss 中手动 import。
     
-    3. 添加demo
+    4. 添加demo
     以添加新组件 Tabbar 的demo为例在 demos/pages 下创建组件示例tabbar.vue, 在home.vue中添加入口和main.js中添加路由
     
-    4. 打包demos代码，并更新到线上dev环境 -> npm run build
+    5. 打包demos代码，并更新到线上dev环境 -> npm run build
     
-    5. 打包jvui组件库代码，先执行npm run build:components --for组件按需引用
+    6. 打包jvui组件库代码，先执行npm run build:components --组件按需引用代码打包
+                        然后npm run build:api --合并单个组件的api文档
                         然后npm run build:style --编译src/style/scss下的scss文件并copy到根目录下的lib/style中 
                         然后npm run build:jvui --组件库入口文件
     
-    
+    7.提交代码到dev, dev合到master，重新部署demo和文档
 ```
 
 #### 一些实用技巧
