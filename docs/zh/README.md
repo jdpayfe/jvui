@@ -175,7 +175,7 @@ npm run dev
     以添加新组件 Tabbar 为例，首先在 src/components 目录下新建目录 tabbar，用 tabbar.vue 文件做为组件入口，需要的话可以建其他文件tabbar-item.vue来组织代码。
     
     2. 添加组件对应的api文档
-    在./docs/zh/api/下添加组件的api说明，使用md文件，文件名与组件同名
+    在./docs/zh/api/components/下添加组件的api说明，使用md文件，文件名与组件同名
     
     3. 添加样式代码
     组件对应的样式需要放到 src/style/scss 目录下，Tabbar 组件的话需要新建一个文件 tabbar.scss 如若个组件样式比较复杂，为了方便组织代码可以在 src/style/scss 下面新建一个同名目录 tabbar，里面可以放一些 partial 样式。
