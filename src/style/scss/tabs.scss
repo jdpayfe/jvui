@@ -1,7 +1,7 @@
-@import './common/var.scss';
+@import '../common/var.scss';
 
-$jv-tabs-line-height: 44px;
-$jv-tabs-card-height: 30px;
+$jv-tabs-line-height: .44rem;
+$jv-tabs-card-height: .3rem;
 
 .jv-tabs {
     position: relative;
@@ -32,13 +32,13 @@ $jv-tabs-card-height: 30px;
 
         &--line {
             height: 100%;
-            padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
+            padding-bottom: .15rem; /* 15px padding to hide scrollbar in mobile safari */
             box-sizing: content-box;
         }
 
         &--card {
-            margin: 0 15px;
-            border-radius: 2px;
+            margin: 0 .15rem;
+            border-radius: 0.2rem;
             box-sizing: border-box;
             height: $jv-tabs-card-height;
             border: 1px solid $gray-darker;
@@ -46,7 +46,7 @@ $jv-tabs-card-height: 30px;
             .jv-tab {
                 color: $gray-darker;
                 border-right: 1px solid $gray-darker;
-                line-height: 28px;
+                line-height: .28rem;
 
                 &:last-child {
                     border-right: none;
@@ -63,10 +63,9 @@ $jv-tabs-card-height: 30px;
     &__nav-bar {
         z-index: 1;
         left: 0;
-        bottom: 15px;
-        height: 2px;
+        bottom: .15rem;
+        height: .2rem;
         position: absolute;
-        background-color: $red;
     }
 
     &--scrollable {
@@ -105,7 +104,7 @@ $jv-tabs-card-height: 30px;
 .jv-tab {
     flex: 1;
     cursor: pointer;
-    padding: 0 5px;
+    padding: 0 .05rem;
     font-size: 14px;
     position: relative;
     color: $text-color;
@@ -117,7 +116,7 @@ $jv-tabs-card-height: 30px;
 
     span {
         display: block;
-        font-size: .14rem;
+        font-size: 14px;
         color: #333;
     }
 
@@ -126,7 +125,7 @@ $jv-tabs-card-height: 30px;
     }
 
     &--active {
-        font-size: .14rem;
+        font-size: 14px;
         color: #EE3D3D;
     }
 

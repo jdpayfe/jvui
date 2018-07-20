@@ -1,8 +1,8 @@
 <template>
-    <transition name="van-fade">
+    <transition name="jv-fade">
         <div
             v-show="visible"
-            class="van-modal"
+            class="jv-modal"
             :class="className"
             :style="style"
             @touchmove.prevent.stop
@@ -12,23 +12,23 @@
 </template>
 
 <script>
-    export default {
-        name: 'modal',
-        
-        props: {
-            visible: Boolean,
-            zIndex: Number,
-            className: String,
-            customStyle: Object
-        },
-        
-        computed: {
-            style() {
-                return {
-                    zIndex: this.zIndex,
-                    ...this.customStyle
-                };
-            }
+export default {
+    name: 'modal',
+
+    props: {
+        visible: Boolean,
+        zIndex: Number,
+        className: String,
+        customStyle: Object
+    },
+
+    computed: {
+        style () {
+            return {
+                zIndex: this.zIndex,
+                ...this.customStyle
+            };
         }
-    };
+    }
+};
 </script>

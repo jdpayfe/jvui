@@ -1,4 +1,4 @@
-@import './common/var.scss';
+@import '../common/var.scss';
 
 .jv-picker {
     overflow: hidden;
@@ -8,15 +8,15 @@
 
     &__toolbar {
         display: flex;
-        height: 40px;
-        line-height: 40px;
+        height: .4rem;
+        line-height: .4rem;
         justify-content: space-between;
     }
 
     &__cancel,
     &__confirm {
         color: $blue;
-        padding: 0 15px;
+        padding: 0 .15rem;
 
         &:active {
             background-color: $active-color;
@@ -58,23 +58,44 @@
         transform: translateY(-50%);
     }
 
+    &__mask--top {
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
+        pointer-events: none;
+        background: linear-gradient(#fff 0%, rgba(255, 255, 255, 0) 60%);
+    }
+
+    &__mask--bottom {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
+        pointer-events: none;
+        background: linear-gradient(rgba(255, 255, 255, 0) 40%, #fff 100%);
+    }
+
     &-column {
         flex: 1;
         overflow: hidden;
-        font-size: 17px;
+        font-size: 16px;
         text-align: center;
 
         li {
-            padding: 0 5px;
-            color: $gray-darker;
-        }
+            padding: 0 .05rem;
+            font-size: 16px;
+            color: #999;
 
-        li &--selected {
-            color: $black;
-        }
+            &.jv-picker-column--selected {
+                color: #666;
+            }
 
-        li &--disabled {
-            opacity: .3;
+            &.jv-picker-column--disabled {
+                opacity: .3;
+            }
         }
     }
 }

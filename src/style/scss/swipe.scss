@@ -1,6 +1,5 @@
-@import './common/var.scss';
-
-$jv-swipe-indicator: 6px;
+@import '../common/var.scss';
+$jv-swipe-indicator: .06rem;
 
 .jv-swipe {
     overflow: hidden;
@@ -19,7 +18,7 @@ $jv-swipe-indicator: 6px;
 
     &__indicators {
         left: 50%;
-        bottom: 10px;
+        bottom: .1rem;
         position: absolute;
         height: $jv-swipe-indicator;
         transform: translate3d(-50%, 0, 0);

@@ -8,9 +8,8 @@ export default {
         replace: Boolean,
         to: [String, Object]
     },
-    
     methods: {
-        routerLink() {
+        routerLink () {
             const {to, url, $router, replace} = this;
             if (to && $router) {
                 $router[replace ? 'replace' : 'push'](to);

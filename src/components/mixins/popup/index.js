@@ -1,7 +1,7 @@
-import manager from "./manager";
-import context from "./context";
-import scrollUtils from "../../utils/scroll";
-import {on, off} from "../../utils/event";
+import manager from './manager';
+import context from './context';
+import scrollUtils from '../../utils/scroll';
+import {on, off} from '../../utils/event';
 
 export default {
     props: {
@@ -25,30 +25,30 @@ export default {
             default: true
         }
     },
-    
+
     watch: {
-        value(val) {
+        value (val) {
             this[val ? 'open' : 'close']();
         },
-        
-        getContainer() {
+
+        getContainer () {
             this.move();
         },
-        
-        overlay() {
+
+        overlay () {
             this.renderOverlay();
         }
     },
-    
-    created() {
+
+    created () {
         this._popupId = 'popup-' + context.plusKey('id');
         this.pos = {
             x: 0,
             y: 0
         };
     },
-    
-    mounted() {
+
+    mounted () {
         if (this.getContainer) {
             this.move();
         }
@@ -56,60 +56,60 @@ export default {
             this.open();
         }
     },
-    
-    beforeDestroy() {
+
+    beforeDestroy () {
         this.close();
     },
-    
+
     methods: {
-        open() {
+        open () {
             /* istanbul ignore next */
             if (this.$isServer) {
                 return;
             }
-            
+
             // 如果属性中传入了`zIndex`，则覆盖`context`中对应的`zIndex`
             if (this.zIndex !== undefined) {
                 context.zIndex = this.zIndex;
             }
-            
+
             if (this.lockScroll) {
-                document.body.classList.add('van-overflow-hidden');
+                document.body.classList.add('jv-overflow-hidden');
                 on(document, 'touchstart', this.onTouchStart);
                 on(document, 'touchmove', this.onTouchMove);
             }
-            
+
             this.renderOverlay();
             this.$emit('input', true);
         },
-        
-        close() {
+
+        close () {
             if (this.lockScroll) {
-                document.body.classList.remove('van-overflow-hidden');
+                document.body.classList.remove('jv-overflow-hidden');
                 off(document, 'touchstart', this.onTouchStart);
                 off(document, 'touchmove', this.onTouchMove);
             }
-            
+
             manager.close(this._popupId);
             this.$emit('input', false);
         },
-        
-        move() {
+
+        move () {
             if (this.getContainer) {
                 this.getContainer().appendChild(this.$el);
             } else if (this.$parent) {
                 this.$parent.$el.appendChild(this.$el);
             }
         },
-        
-        onTouchStart(e) {
+
+        onTouchStart (e) {
             this.pos = {
                 x: e.touches[0].clientX,
                 y: e.touches[0].clientY
             };
         },
-        
-        onTouchMove(e) {
+
+        onTouchMove (e) {
             const {pos} = this;
             const dx = e.touches[0].clientX - pos.x;
             const dy = e.touches[0].clientY - pos.y;
@@ -117,16 +117,16 @@ export default {
             const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
             const {scrollHeight, offsetHeight, scrollTop} = el;
             const isVertical = Math.abs(dx) < Math.abs(dy);
-            
+
             let status = '11';
-            
+
             /* istanbul ignore next */
             if (scrollTop === 0) {
                 status = offsetHeight >= scrollHeight ? '00' : '01';
             } else if (scrollTop + offsetHeight >= scrollHeight) {
                 status = '10';
             }
-            
+
             /* istanbul ignore next */
             if (
                 status !== '11' &&
@@ -136,8 +136,8 @@ export default {
                 e.stopPropagation();
             }
         },
-        
-        renderOverlay() {
+
+        renderOverlay () {
             if (this.overlay) {
                 manager.open(this, {
                     zIndex: context.plusKey('zIndex'),
