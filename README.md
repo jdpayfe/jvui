@@ -221,10 +221,3 @@ npm run dev
 
  ```
 
-> ### 参考
-#### ui组件库参考
-``` bash
-1. https://www.youzanyun.com/zanui/vant#/zh-CN/intro
-2. https://github.com/youzan/vant
- ```
-
