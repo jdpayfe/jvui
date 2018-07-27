@@ -220,11 +220,3 @@ npm run dev
         其他：组件内部用来控制层次的 z-index 的区间 [-10, 10]，尽可能写小，一般1，2，3这种就够了。
 
  ```
-
-> ###参考
-#### ui组件库参考
-``` bash
-1. https://www.youzanyun.com/zanui/vant#/zh-CN/intro
-2. https://github.com/youzan/vant
- ```
-
